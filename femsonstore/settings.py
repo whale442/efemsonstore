@@ -36,7 +36,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=True, cast=bool) #True
 
-ALLOWED_HOSTS = ['efemsonstore.herokuapp.com',  'localhost', '127.0.0.1'] 
+ALLOWED_HOSTS = ['fashionanchor.herokuapp.com',  'localhost', '127.0.0.1'] 
 
 
 # Application definition
@@ -199,17 +199,17 @@ AWS_S3_OBJECT_PARAMETERS = {
 }
 AWS_S3_FILE_OVERWRITE = False
 AWS_DEFAULT_ACL = None
-# AWS_LOCATION = 'static'
+AWS_LOCATION = 'static'
+AWS_QUERYSTRING_AUTH = False
 
 
 
-# STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
-# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
 
 
-# DEFAULT_FILE_STORAGE = 'femsonstore.media_storages.MediaStorage'
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 # Media Folder SEttings
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
