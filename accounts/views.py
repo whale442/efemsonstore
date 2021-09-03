@@ -281,7 +281,7 @@ def change_password(request):
     return render(request, 'accounts/change_password.html')
 
 
-@login_required(login_url='login')
+
 def order_detail(request, order_id):
     order_detail = OrderProduct.objects.filter(order__order_number=order_id)
     order = Order.objects.get(order_number=order_id)
