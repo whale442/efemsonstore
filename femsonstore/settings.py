@@ -34,7 +34,7 @@ SECRET_KEY = config('SECRET_KEY')
 
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG', default=True, cast=bool) #True
+DEBUG = config('DEBUG', default=False, cast=bool) 
 
 ALLOWED_HOSTS = ['fashionanchor.herokuapp.com',  'localhost', '127.0.0.1'] 
 
@@ -112,32 +112,32 @@ AUTH_USER_MODEL = 'accounts.Account'
 # Database
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-      
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'shoppingcartdb',
-        'USER': 'akins',
-        'PASSWORD': 'olawale442',
-        'HOST': 'localhost',
-        'PORT': '5432',
-    }             
-
-}
-
-
 # DATABASES = {
 #     'default': {
       
 #         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': 'd9eo9sg71eegef',
-#         'USER': 'egimurlndmyyns',
-#         'PASSWORD': 'd36f4ad15f3ec5851a3c98f8237d3e813f27122121439356f89078f4b040b06e',
-#         'HOST': 'ec2-18-214-238-28.compute-1.amazonaws.com',
+#         'NAME': 'shoppingcartdb',
+#         'USER': 'akins',
+#         'PASSWORD': 'olawale442',
+#         'HOST': 'localhost',
 #         'PORT': '5432',
 #     }             
 
 # }
+
+
+DATABASES = {
+    'default': {
+      
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'd9eo9sg71eegef',
+        'USER': 'egimurlndmyyns',
+        'PASSWORD': 'd36f4ad15f3ec5851a3c98f8237d3e813f27122121439356f89078f4b040b06e',
+        'HOST': 'ec2-18-214-238-28.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }             
+
+}
 
 
 # DATABASES = {
