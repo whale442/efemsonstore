@@ -1,6 +1,7 @@
 {% extends "base.html" %}
 
 {% load static %}
+{% load humanize %}
 
 {% block title %}| OrderDetailsPage {% endblock %}
 
@@ -70,23 +71,23 @@
                                           				</p>
                                                 </td>
                                                 <td class="text-center">{{item.quantity}}</td>
-                                                <td class="text-center">₦{{item.product_price}} NGN</td>
+                                                <td class="text-center">₦{{item.product_price|intcomma}} NGN</td>
                                             </tr>
                                           {% endfor %}
                                         </tbody>
                                         <tfoot>
                                             <tr>
                                                 <th colspan="2" class="text-right">Sub Total:</th>
-                                                <th class="text-center">₦{{subtotal}} NGN</th>
+                                                <th class="text-center">₦{{subtotal|intcomma}} NGN</th>
                                             </tr>
                                             <tr>
                                                 <th colspan="2" class="text-right">Tax:</th>
-                                                <th class="text-center">₦{{order.tax}} NGN</th>
+                                                <th class="text-center">₦{{order.tax|intcomma}} NGN</th>
                                             </tr>
 
                                             <tr>
                                                 <th colspan="2" class="text-right">Grand Total:</th>
-                                                <th class="text-center">₦{{order.order_total}} NGN</th>
+                                                <th class="text-center">₦{{order.order_total|intcomma}} NGN</th>
                                             </tr>
                                         </tfoot>
                                     </table>

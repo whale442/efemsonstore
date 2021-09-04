@@ -40,7 +40,7 @@ def register(request):
             profile.profile_picture = 'default/default-user.png'
             profile.save()
 
-            # USER ACTIVATION
+            #USER ACTIVATION
             current_site = get_current_site(request)
             mail_subject = 'Please activate your account'
             message = render_to_string('accounts/account_verification_email.html', {
@@ -281,7 +281,7 @@ def change_password(request):
     return render(request, 'accounts/change_password.html')
 
 
-
+@login_required(login_url='login')
 def order_detail(request, order_id):
     order_detail = OrderProduct.objects.filter(order__order_number=order_id)
     order = Order.objects.get(order_number=order_id)
