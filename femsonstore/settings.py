@@ -74,11 +74,7 @@ MIDDLEWARE = [
 ]
 
 
-INTERNAL_IPS = [
-    # ...
-    '127.0.0.1',
-    # ...
-]
+
 
 SESSION_EXPIRE_SECONDS = 3600  # 1 hour
 SESSION_EXPIRE_AFTER_LAST_ACTIVITY = True
